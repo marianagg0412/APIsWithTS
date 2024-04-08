@@ -4,7 +4,7 @@ import {getKeyboards, getKeyboard, createKeyBoard, deleteKeyBoard} from "../cont
 const router = Router();
 
 router.get("/",getKeyboards);
-router.get("//:brand",getKeyboard);
+router.get("/:id",getKeyboard);
 router.post("/",createKeyBoard);
 router.delete("/:brand",deleteKeyBoard);
 

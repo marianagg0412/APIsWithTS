@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import {router} from "./routes";
+import dbConnect from './config/mongo';
 
 //Set up port for our app
 //If it is not available it would be port 8081
@@ -14,6 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use(router);
+//We connect db
+dbConnect().then(() => console.log('Connected to db'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
